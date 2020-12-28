@@ -1,5 +1,5 @@
 * {
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,14 +31,19 @@ body {
   box-shadow: 0px 2px 10px rgb(44, 43, 43);
 }
 
-.card-header{
-    height: 200px;
-    overflow: hidden;
+/*This is the container that wraps the header image
+ The height is set to a fixed value so that we can explicitly say 
+ that any overflow should be treated as hidden
+*/
+
+.card-header {
+  height: 200px;
+  overflow: hidden;
 }
 
 .card-header img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: fill;
   transform: scale(1);
   transition: 400ms ease;
@@ -111,6 +116,14 @@ body {
 @media (max-width: 940px) {
   .container {
     grid-template-columns: 1fr; /* or 1fr 1fr 1fr */
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1140px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* or 1fr 1fr 1fr */
     align-items: center;
     justify-items: center;
   }
